@@ -4,25 +4,11 @@ level: 2
 languages: python
 ---
 
-#Google App Engine: Intro to Google App Engine
+#Google App Engine: What does it do and how does it work?
 
-#Objectives:
+**Google App Engine** is a Platform as a Service (PaaS) offering that lets you build and run applications on Google’s infrastructure. Basically, you upload your code through the App Engine interface, then it lives on Google's machines and App Engine figures out the minutia of how to send the files to the right places.
 
-+ Understand what App Engine is
-+ Introduction of the Server Client and MVC models
-+ Understanding the concept of front end vs. back end
-+ What are HTTP response/requests
-+ What are routes and handlers
-
-#Motivation
-You've seen how to use python to solve problems. You learned how to build out the front-end of a website. Now it's time to put those two essential components together. Once you've mastered App Engine, you'll have all the tools you need to build a fully functional, dynamic web application.
-
-#Lesson:
-Long ago, if you wanted to host a website on the internet, you would serve web pages from your own computer. If you were a company, this meant owning and maintaining big servers. If you were a hobbyist… it was hard!
-
-Now, there are better ways to handle the infrastructure parts of serving your pages to your users. Google App Engine is a Platform as a Service (PaaS) offering that lets you build and run applications on Google’s infrastructure. Basically, you upload your code through the App Engine interface, then it lives on Google's machines and App Engine figures out the minutia of how to send the files to the right places.
-
-App Engine Python Software Development Kit (SDK) gives you the nice launcher interface that you used, and it lets you simulate what will happen when your code is uploaded to Google's servers. That's what we did when we hit launch - started a mock server on our local machines that will do roughly the same thing as the real App Engine - serve a simple web page.
+App Engine Python Software Development Kit (SDK) gives you a launcher interface, and it lets you simulate what will happen when your code is uploaded to Google's servers.
 
 **Clients and Server**:
 A server listens for HTTP requests from clients and sends back responses. Clients are usually individuals in their web browser, and their requests are usually asking for a web page at a particular url.
@@ -41,12 +27,12 @@ Two HTTP Request Methods: **GET** and **POST**
 <img src="http://lh3.ggpht.com/aviadezra/SHj6gLRSkSI/AAAAAAAAALg/0xkCGOXuefc/image_thumb3.png?imgmax=800" width=300px>
 
 **MVC** stands for Model View Controller. It was conceived as a general solution to the problem of users controlling a large and complex data set. MVC is a way to organize our code in separate directories so that we can improve maintainability.
-+ Models (Back-end - Datastore in App Engine)
++ **Models** (Back-end - Datastore in App Engine)
   + The logic or code that goes into storing and maintaining the data in an application: Our models are written in python
   + The models are responsible for pulling data from database.
-+ Views (Front-end - HTML Template in App Engine)
++ **Views** (Front-end - HTML Template in App Engine)
   + This directory is where we will store all of the HTML and CSS (and embedded Python) that gets displayed in the browser. This is what the user sees.
-+ Controller (logic - our Python scripts in App Engine)
++ **Controller** (logic - our Python scripts in App Engine)
  + The application controller file in our project will hold all the code that is in charge of making the back end - the Python logic - communicate to the front end - the HTML in the browser that users interact with.
 
 This MVC - model view controller - framework is the way that most modern web applications are organized.
@@ -60,5 +46,4 @@ Setting up a route in the application controller:
  + When they go to http://www.tinykittens.com/about  they are triggering the '/about’ route
  + When they go to  http://www.tinykittens.com/adopt   they are triggering the '/adopt' route
 
-#Conclusion
-Now's your chance to combine your creative and technical skills to fully express yourself with code. You have all the tools you need to make your own web application!
+Now's your chance to combine your creative and technical skills to fully express yourself with code.
