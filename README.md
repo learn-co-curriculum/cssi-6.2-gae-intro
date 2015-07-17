@@ -4,46 +4,58 @@ level: 2
 languages: python
 ---
 
-#Google App Engine: What does it do and how does it work?
+#Breaking Down Google App Engine
 
-**Google App Engine** is a Platform as a Service (PaaS) offering that lets you build and run applications on Google’s infrastructure. Basically, you upload your code through the App Engine interface, then it lives on Google's machines and App Engine figures out the minutia of how to send the files to the right places.
+**Google App Engine** is a Platform as a Service (PaaS) offering that lets you build and run applications on Google’s infrastructure. You upload your files through the App Engine interface and your app gets hosted on Google's servers. App Engine connects the back-end and front-end for you.
 
-App Engine Python Software Development Kit (SDK) gives you a launcher interface, and it lets you simulate what will happen when your code is uploaded to Google's servers.
+Before we continue to make our own webapps, we need to speak very briefly about how anyone on the internet can access the code that you write at home.
 
-**Clients and Server**:
-A server listens for HTTP requests from clients and sends back responses. Clients are usually individuals in their web browser, and their requests are usually asking for a web page at a particular url.
+### Clients and Servers
+The internet is a network of computers that communicate with eachother using HTTP, which defines how data is deliverd. We won't cover HTTP too much during CSSI but you can read more about it [here](http://www.tutorialspoint.com/http/http_overview.htm).
 
-**So what is an HTTP request?**
-+ The **Hypertext Transfer Protocol** (HTTP) is designed to enable communications between clients and servers.
-+ HTTP works as a request-response protocol between a client and server.
-+ A web browser may be the client, and an application on a computer that hosts a web site may be the server.
-+ Example: A client (browser) submits an HTTP request to the server; then the server returns a response to the client. The response contains status information about the request and may also contain the requested content.
+The computers can either be clients, servers or often times both.
 
-Two HTTP Request Methods: **GET** and **POST**
-+ Two commonly used methods for a request-response between a client and server are: GET and POST.
- + GET - Requests data from a specified resource, usually a URL
- + POST - Submits data to be processed to a specified resource, the data is temporarily stored
+![Client and Server Diagram](https://mdn.mozillademos.org/files/4291/client-server.png)
+
+The webapps you build will
+* Get data from a client -  a request 
+* Use a server to send data back -  a response. 
+
+A server is a computer that waits (listens) for requests and sends back responses. Clients are usually individuals on their web browser, and their requests might be typing in a certain URL or submitting certain information.
+
+### Requests
+When building webapps on App Engine you will need to conside how your users will interact with your app.
+There are two ways that a client (users) can make a request (send data): **GET** and **POST**
+ + GET - data is stored within a URL
+ + POST - data is submitted and temporarily stored
+
+You will learn how to deal with both of these types of requests later today.
+
+
+### MVC
+In week 1, we learned front-end languages: HTML and CSS and a back-end language: Python. Webapps need a way to connect the front-end, the back-end and will often need a database.
+
+The way that many people refer to the connections between everything a webapp might need is MVC or Model-View-Controller.
 
 <img src="http://lh3.ggpht.com/aviadezra/SHj6gLRSkSI/AAAAAAAAALg/0xkCGOXuefc/image_thumb3.png?imgmax=800" width=300px>
 
-**MVC** stands for Model View Controller. It was conceived as a general solution to the problem of users controlling a large and complex data set. MVC is a way to organize our code in separate directories so that we can improve maintainability.
-+ **Models** (Back-end - Datastore in App Engine)
-  + The logic or code that goes into storing and maintaining the data in an application: Our models are written in python
-  + The models are responsible for pulling data from database.
++ **Models** (Back-end data - Datastore in App Engine)
+  + Stores the data
 + **Views** (Front-end - HTML Template in App Engine)
-  + This directory is where we will store all of the HTML and CSS (and embedded Python) that gets displayed in the browser. This is what the user sees.
-+ **Controller** (logic - our Python scripts in App Engine)
- + The application controller file in our project will hold all the code that is in charge of making the back end - the Python logic - communicate to the front end - the HTML in the browser that users interact with.
+  + The front end, this is what the user sees.
++ **Controller** (Back-end logic - our Python scripts in App Engine)
+ + The  the code that is in charge of making the back end  communicate to the front end 
 
 This MVC - model view controller - framework is the way that most modern web applications are organized.
 Keeping the functionality of our application in these separate directories helps us stay organized as our apps become more and more complex.
 
+### Routes and Handlers
 **Routes and Handlers**
 Setting up a route in the application controller:
 + Routes are set up to match the URL in the navigation bar of the browser.
-+ Using http://www.tinykittens.com/ as an example.
++ Using `http://www.tinykittens.com/ as an example.`
  + When users go this URL with their browser they are triggering the '/' route
- + When they go to http://www.tinykittens.com/about  they are triggering the '/about’ route
- + When they go to  http://www.tinykittens.com/adopt   they are triggering the '/adopt' route
+ + When they go to `http://www.tinykittens.com/about`  they are triggering the '/about’ route
+ + When they go to  `http://www.tinykittens.com/adopt`   they are triggering the '/adopt' route
 
 Now's your chance to combine your creative and technical skills to fully express yourself with code.
