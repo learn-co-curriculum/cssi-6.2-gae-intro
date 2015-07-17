@@ -49,13 +49,30 @@ The way that many people refer to the connections between everything a webapp mi
 This MVC - model view controller - framework is the way that most modern web applications are organized.
 Keeping the functionality of our application in these separate directories helps us stay organized as our apps become more and more complex.
 
-### Routes and Handlers
-**Routes and Handlers**
-Setting up a route in the application controller:
-+ Routes are set up to match the URL in the navigation bar of the browser.
-+ Using `http://www.tinykittens.com/ as an example.`
- + When users go this URL with their browser they are triggering the '/' route
- + When they go to `http://www.tinykittens.com/about`  they are triggering the '/about’ route
- + When they go to  `http://www.tinykittens.com/adopt`   they are triggering the '/adopt' route
+### Handlers and Routes
 
-Now's your chance to combine your creative and technical skills to fully express yourself with code.
+A handler is the way that the back and front end interact in Google App Engine.
+
+```python
+class MainHandler(webapp2.RequestHandler):
+    def get(self):
+        self.response.write('Hello world!')
+
+class CountHandler(webapp2.RequestHandler):
+    def get(self):
+        for i in range(1, 101):
+            self.response.write(i)
+
+app = webapp2.WSGIApplication([
+    ('/', MainHandler),
+    ('/count', CountHandler),
+], debug=True)
+```
+
+Each handler is a block of code that is set up to send a certain response. MainHandler and CountHandler both respond in different ways. Handlers can respond to GET requests - like in the code above, but they can also respond to POST requests.
+
+In order to set up the type of response to send to the user, you need to write routes. A route is a like a map that shows which handler to run for each url. 
+* If the user's request was `localhost:8080` , then the MainHandler would respond with `Hello World`
+* If the user's request was `localhost:8080/count` , then the MainHandler would respond by printing a bunch of numbers!
+
+
