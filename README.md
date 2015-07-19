@@ -24,7 +24,7 @@ The webapps you build will
 A server is a computer that waits (listens) for requests and sends back responses. Clients are usually individuals on their web browser, and their requests might be typing in a certain URL or submitting certain information.
 
 ### Requests
-When building webapps on App Engine you will need to conside how your users will interact with your app.
+When building webapps on App Engine you will need to consider how your users will interact with your app.
 There are two ways that a client (users) can make a request (send data): **GET** and **POST**
  + GET - data is stored within a URL
  + POST - data is submitted and temporarily stored
