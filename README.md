@@ -33,7 +33,7 @@ You will learn how to deal with both of these types of requests later today.
 
 
 ### MVC
-In week 1, we learned front-end languages: HTML and CSS and a back-end language: Python. Webapps need a way to connect the front-end, the back-end and will often need a database.
+In week 1, we learned front-end languages: HTML, CSS and JS and a back-end language: Python. Webapps need a way to connect the front-end, the back-end and will often need a database.
 
 The way that many people refer to the connections between everything a webapp might need is MVC or Model-View-Controller.
 
