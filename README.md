@@ -72,3 +72,5 @@ In order to set up the type of response to send to the user, you need to write r
 * If the user's request was `localhost:8080/count` , then the MainHandler would respond by printing a bunch of numbers!
 
 
+
+<a href='https://learn.co/lessons/cssi-6.2-gae-intro' data-visibility='hidden'>View this lesson on Learn.co</a>
